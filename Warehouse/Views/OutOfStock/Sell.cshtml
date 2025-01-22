@@ -1,0 +1,50 @@
+﻿@model List<Warehouse.Models.OutOfStockProductViewModel>
+
+@{
+    ViewData["Title"] = "Sell Products";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<h1>Sell Products</h1>
+
+<form asp-action="SellProducts" method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Current Quantity</th>
+                <th>Quantity to Sell</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@Model[i].Name</td>
+                    <td>@Model[i].CategoryName</td>
+                    <td>@Model[i].CurrentQuantity</td>
+                    <td>
+                        <input type="number" name="products[@i].QuantityToSell" value="0" class="form-control" />
+                        <input type="hidden" name="products[@i].ProductId" value="@Model[i].ProductId" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-danger">Sell</button>
+</form>

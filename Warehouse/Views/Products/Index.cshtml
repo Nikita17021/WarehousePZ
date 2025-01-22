@@ -1,0 +1,105 @@
+﻿@model Warehouse.Models.ProductCategoryViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Warehouse</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form method="get">
+    <div class="form-group">
+        <label for="searchString">Search by Name</label>
+        <input type="text" name="searchString" id="searchString" class="form-control" value="@Model.SearchString" />
+    </div>
+
+    <div class="form-group">
+        <label for="selectedCategory">Category</label>
+        <select name="selectedCategory" id="selectedCategory" class="form-control" asp-for="SelectedCategory" asp-items="Model.Category">
+            <option value="">All Categories</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<p>
+    <a href="@Url.Action("Index", new { sortOrder = ViewData["NameSortOrder"] })">Sort by Name</a> |
+    <a href="@Url.Action("Index", new { sortOrder = ViewData["QuantitySortOrder"] })">Sort by Quantity</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Category.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Product)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Пагинация -->
+<div>
+    <ul class="pagination">
+        <!-- Кнопка на первую страницу -->
+        <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Index", new { pageNumber = 1, pageSize = Model.PageSize, searchString = Model.SearchString, selectedCategory = Model.SelectedCategory, sortOrder = ViewData["NameSortOrder"] })">First</a>
+        </li>
+        <!-- Кнопка на предыдущую страницу -->
+        <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Index", new { pageNumber = Model.CurrentPage - 1, pageSize = Model.PageSize, searchString = Model.SearchString, selectedCategory = Model.SelectedCategory, sortOrder = ViewData["NameSortOrder"] })">Previous</a>
+        </li>
+        <!-- Номера страниц -->
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { pageNumber = i, pageSize = Model.PageSize, searchString = Model.SearchString, selectedCategory = Model.SelectedCategory, sortOrder = ViewData["NameSortOrder"] })">@i</a>
+            </li>
+        }
+        <!-- Кнопка на следующую страницу -->
+        <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Index", new { pageNumber = Model.CurrentPage + 1, pageSize = Model.PageSize, searchString = Model.SearchString, selectedCategory = Model.SelectedCategory, sortOrder = ViewData["NameSortOrder"] })">Next</a>
+        </li>
+        <!-- Кнопка на последнюю страницу -->
+        <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Index", new { pageNumber = Model.TotalPages, pageSize = Model.PageSize, searchString = Model.SearchString, selectedCategory = Model.SelectedCategory, sortOrder = ViewData["NameSortOrder"] })">Last</a>
+        </li>
+    </ul>
+</div>

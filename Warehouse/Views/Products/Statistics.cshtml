@@ -1,0 +1,16 @@
+﻿@model Warehouse.Models.ProductStatistics
+
+@{
+    ViewData["Title"] = "Product Statistics";
+}
+
+<h1>Product Statistics</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Statistics Overview</h5>
+        <p><strong>Total Products:</strong> @Model.TotalProducts</p>
+        <p><strong>Total Quantity:</strong> @Model.TotalQuantity</p>
+        <p><strong>Total Value:</strong> $@Model.TotalValue.ToString("N2")</p>
+    </div>
+</div>
