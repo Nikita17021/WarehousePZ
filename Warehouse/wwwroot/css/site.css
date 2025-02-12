@@ -16,7 +16,264 @@ html {
   position: relative;
   min-height: 100%;
 }
-
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('https://b1883154.smushcdn.com/1883154/wp-content/uploads/2021/07/image-1200x800-1.jpeg?lossy=2&strip=1&webp=1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    animation: slideBackground 30s linear infinite;
 }
+
+@keyframes slideBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+nav {
+    background: #1c1c1c; 
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+    nav a {
+        color: white; 
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 10px 15px;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+    }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+            color: #ffffff;
+        }
+.navbar-brand,
+.navbar-nav .nav-item a {
+    font-size: 18px; /* Ujednolicony rozmiar */
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block; /* Aby transform dzia³a³ poprawnie */
+}
+
+    .navbar-brand:hover,
+    .navbar-nav .nav-item a:hover {
+        transform: scale(1.1); /* Powiêkszenie po najechaniu */
+        color: #f0a500; /* Efekt kolorystyczny */
+    }
+
+p a {
+    display: inline-block;
+    background: #1c1c1c; /* Ciemne t³o */
+    color: white;
+    padding: 10px 20px;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+    p a:hover {
+        transform: scale(1.1); /* Powiêkszenie */
+        background: #f0a500; /* Zmiana koloru na pomarañczowy */
+        color: black; /* Kontrastuj¹cy kolor tekstu */
+        box-shadow: 0 6px 12px rgba(240, 165, 0, 0.5);
+    }
+
+.btn-primary {
+    background-color: #f0a500 !important; /* Pomarañczowy */
+    color: black !important;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(240, 165, 0, 0.5);
+}
+
+    .btn-primary:hover {
+        background-color: #d88c00 !important; /* Ciemniejszy pomarañczowy */
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(240, 165, 0, 0.8);
+    }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    list-style: none;
+    gap: 8px;
+}
+
+.page-item {
+    display: inline-block;
+}
+
+.page-link {
+    background: #1c1c1c;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid #f0a500;
+}
+
+    .page-link:hover {
+        background: #f0a500;
+        color: black;
+        transform: scale(1.1);
+    }
+
+.page-item.active .page-link {
+    background: #f0a500;
+    color: black;
+}
+
+.page-item.disabled .page-link {
+    background: #333;
+    color: #777;
+    cursor: not-allowed;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.2); /* Ciemne, pó³przezroczyste t³o tabeli */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+    /* Nag³ówki tabeli */
+    .table th {
+        background-color: #1c1c1c; /* Ciemniejsze t³o nag³ówków */
+        color: #f0a500; /* Kolor tekstu w nag³ówkach - pomarañczowy */
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    /* Wiersze tabeli */
+    .table tbody tr {
+        background-color: rgba(0, 0, 0, 0.6); /* Ciemne t³o wierszy tabeli */
+    }
+
+        .table tbody tr:hover {
+            background-color: rgba(240, 165, 0, 0.3); /* T³o zmienia siê na pomarañczowe podczas najechania */
+        }
+
+    .table td {
+        padding: 10px 15px;
+        text-align: left;
+    }
+
+        /* Linki w tabeli (nazwy produktów) */
+        .table td a {
+            color: #f0a500; /* Pomarañczowy kolor linków */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+            .table td a:hover {
+                color: #ffffff; /* Kolor linku na bia³y przy hoverze */
+                transform: scale(1.1); /* Powiêkszenie przy najechaniu */
+            }
+
+        /* Przycisk "Edit", "Details", "Delete" */
+        .table td a {
+            color: #f0a500; /* Pomarañczowy */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .table td a:hover {
+                background-color: #f0a500;
+                color: black; /* Kolor tekstu zmienia siê na czarny */
+                transform: scale(1.1);
+            }
+
+            .table td a:not(:last-child) {
+                margin-right: 10px; /* Odstêp miêdzy linkami */
+            }
+/* Stylizacja kontenera formularza */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+    /* Etykiety (label) */
+    .form-group label {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+/* Input i Select */
+.form-control {
+    background-color: rgba(0, 0, 0, 0.1); /* Subtelne ciemne t³o */
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Delikatna ramka */
+    color: white; /* Kolor tekstu na bia³y */
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+    /* Efekt focus (po klikniêciu) */
+    .form-control:focus {
+        background-color: rgba(0, 0, 0, 0.15); /* Jaœniejsze t³o po klikniêciu */
+        border-color: #f0a500; /* Pomarañczowa ramka */
+        box-shadow: 0 0 5px rgba(240, 165, 0, 0.6); /* Efekt podœwietlenia */
+        outline: none; /* Usuniêcie domyœlnego outline */
+    }
+
+    /* Efekt hover na input i select */
+    .form-control:hover {
+        background-color: rgba(0, 0, 0, 0.12); /* Zmiana koloru t³a przy hoverze */
+    }
+
+/* Dla selektora (select) */
+select.form-control {
+    background-color: rgba(0, 0, 0, 0.12);
+    padding-right: 30px; /* Dajemy trochê przestrzeni na strza³kê */
+}
+h1 {
+    font-size: 36px; /* Wiêkszy rozmiar czcionki */
+    font-weight: bold; /* Wyró¿nienie czcionki */
+    text-align: center; /* Wyœrodkowanie tekstu */
+    letter-spacing: 1px; /* Delikatne rozstawienie liter */
+    margin-bottom: 20px; /* Odstêp od elementów poni¿ej */
+    padding: 10px 0; /* Padding na górze i dole */
+    position: relative;
+    transition: all 0.3s ease; /* P³ynna animacja */
+}
+footer {
+    background: #1c1c1c; /* Ciemne t³o */
+    color: #f0f0f0; /* Jasny tekst */
+    padding: 8px 0; /* Wiêksza przestrzeñ */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Subtelny cieñ na górze */
+    text-align: center; /* Wyœrodkowanie tekstu */
+    position: relative;
+    z-index: 999; /* Na wierzchu */
+}
+
