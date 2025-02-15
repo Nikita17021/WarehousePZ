@@ -62,20 +62,20 @@ nav {
         }
 .navbar-brand,
 .navbar-nav .nav-item a {
-    font-size: 18px; /* Ujednolicony rozmiar */
+    font-size: 18px; 
     transition: transform 0.3s ease, color 0.3s ease;
-    display: inline-block; /* Aby transform dzia³a³ poprawnie */
+    display: inline-block; 
 }
 
     .navbar-brand:hover,
     .navbar-nav .nav-item a:hover {
-        transform: scale(1.1); /* Powiêkszenie po najechaniu */
-        color: #f0a500; /* Efekt kolorystyczny */
+        transform: scale(1.1);
+        color: #f0a500;
     }
 
 p a {
     display: inline-block;
-    background: #1c1c1c; /* Ciemne t³o */
+    background: #1c1c1c; 
     color: white;
     padding: 10px 20px;
     font-size: 11px;
@@ -87,14 +87,14 @@ p a {
 }
 
     p a:hover {
-        transform: scale(1.1); /* Powiêkszenie */
-        background: #f0a500; /* Zmiana koloru na pomarañczowy */
-        color: black; /* Kontrastuj¹cy kolor tekstu */
+        transform: scale(1.1); 
+        background: #f0a500;
+        color: black; 
         box-shadow: 0 6px 12px rgba(240, 165, 0, 0.5);
     }
 
 .btn-primary {
-    background-color: #f0a500 !important; /* Pomarañczowy */
+    background-color: #f0a500 !important; 
     color: black !important;
     font-weight: bold;
     border: none;
@@ -105,7 +105,7 @@ p a {
 }
 
     .btn-primary:hover {
-        background-color: #d88c00 !important; /* Ciemniejszy pomarañczowy */
+        background-color: #d88c00 !important; 
         transform: scale(1.1);
         box-shadow: 0 6px 12px rgba(240, 165, 0, 0.8);
     }
@@ -152,27 +152,27 @@ p a {
 .table {
     width: 100%;
     border-collapse: collapse;
-    background-color: rgba(0, 0, 0, 0.2); /* Ciemne, pó³przezroczyste t³o tabeli */
+    background-color: rgba(0, 0, 0, 0.2); 
     color: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-    /* Nag³ówki tabeli */
+   
     .table th {
-        background-color: #1c1c1c; /* Ciemniejsze t³o nag³ówków */
-        color: #f0a500; /* Kolor tekstu w nag³ówkach - pomarañczowy */
+        background-color: #1c1c1c;
+        color: #f0a500; 
         padding: 12px 15px;
         text-align: left;
     }
 
-    /* Wiersze tabeli */
+
     .table tbody tr {
-        background-color: rgba(0, 0, 0, 0.6); /* Ciemne t³o wierszy tabeli */
+        background-color: rgba(0, 0, 0, 0.6); 
     }
 
         .table tbody tr:hover {
-            background-color: rgba(240, 165, 0, 0.3); /* T³o zmienia siê na pomarañczowe podczas najechania */
+            background-color: rgba(240, 165, 0, 0.3);
         }
 
     .table td {
@@ -180,9 +180,9 @@ p a {
         text-align: left;
     }
 
-        /* Linki w tabeli (nazwy produktów) */
+        
         .table td a {
-            color: #f0a500; /* Pomarañczowy kolor linków */
+            color: #f0a500; 
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
@@ -190,13 +190,13 @@ p a {
         }
 
             .table td a:hover {
-                color: #ffffff; /* Kolor linku na bia³y przy hoverze */
-                transform: scale(1.1); /* Powiêkszenie przy najechaniu */
+                color: #ffffff;
+                transform: scale(1.1); 
             }
 
-        /* Przycisk "Edit", "Details", "Delete" */
+      
         .table td a {
-            color: #f0a500; /* Pomarañczowy */
+            color: #f0a500;
             text-decoration: none;
             font-weight: bold;
             padding: 5px 10px;
@@ -206,20 +206,18 @@ p a {
 
             .table td a:hover {
                 background-color: #f0a500;
-                color: black; /* Kolor tekstu zmienia siê na czarny */
+                color: black; 
                 transform: scale(1.1);
             }
 
             .table td a:not(:last-child) {
-                margin-right: 10px; /* Odstêp miêdzy linkami */
+                margin-right: 10px; 
             }
-/* Stylizacja kontenera formularza */
 .form-group {
     margin-bottom: 20px;
     position: relative;
 }
 
-    /* Etykiety (label) */
     .form-group label {
         font-size: 14px;
         font-weight: bold;
@@ -227,11 +225,10 @@ p a {
         display: block;
     }
 
-/* Input i Select */
 .form-control {
-    background-color: rgba(0, 0, 0, 0.1); /* Subtelne ciemne t³o */
-    border: 1px solid rgba(0, 0, 0, 0.3); /* Delikatna ramka */
-    color: white; /* Kolor tekstu na bia³y */
+    background-color: rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(0, 0, 0, 0.3); 
+    color: white; 
     padding: 8px 12px;
     font-size: 16px;
     border-radius: 5px;
@@ -239,41 +236,40 @@ p a {
     width: 100%;
 }
 
-    /* Efekt focus (po klikniêciu) */
     .form-control:focus {
-        background-color: rgba(0, 0, 0, 0.15); /* Jaœniejsze t³o po klikniêciu */
-        border-color: #f0a500; /* Pomarañczowa ramka */
-        box-shadow: 0 0 5px rgba(240, 165, 0, 0.6); /* Efekt podœwietlenia */
-        outline: none; /* Usuniêcie domyœlnego outline */
+        background-color: rgba(0, 0, 0, 0.15); 
+        border-color: #f0a500;
+        box-shadow: 0 0 5px rgba(240, 165, 0, 0.6); 
+        outline: none; 
     }
 
-    /* Efekt hover na input i select */
+    
     .form-control:hover {
-        background-color: rgba(0, 0, 0, 0.12); /* Zmiana koloru t³a przy hoverze */
+        background-color: rgba(0, 0, 0, 0.12);
     }
 
-/* Dla selektora (select) */
+
 select.form-control {
     background-color: rgba(0, 0, 0, 0.12);
-    padding-right: 30px; /* Dajemy trochê przestrzeni na strza³kê */
+    padding-right: 30px; 
 }
 h1 {
-    font-size: 36px; /* Wiêkszy rozmiar czcionki */
-    font-weight: bold; /* Wyró¿nienie czcionki */
-    text-align: center; /* Wyœrodkowanie tekstu */
-    letter-spacing: 1px; /* Delikatne rozstawienie liter */
-    margin-bottom: 20px; /* Odstêp od elementów poni¿ej */
-    padding: 10px 0; /* Padding na górze i dole */
+    font-size: 36px; 
+    font-weight: bold; 
+    text-align: center;
+    letter-spacing: 1px; 
+    margin-bottom: 20px; 
+    padding: 10px 0; 
     position: relative;
-    transition: all 0.3s ease; /* P³ynna animacja */
+    transition: all 0.3s ease; 
 }
 footer {
-    background: #1c1c1c; /* Ciemne t³o */
-    color: #f0f0f0; /* Jasny tekst */
-    padding: 8px 0; /* Wiêksza przestrzeñ */
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Subtelny cieñ na górze */
-    text-align: center; /* Wyœrodkowanie tekstu */
+    background: #1c1c1c; 
+    color: #f0f0f0; 
+    padding: 8px 0; 
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
     position: relative;
-    z-index: 999; /* Na wierzchu */
+    z-index: 999; 
 }
 
